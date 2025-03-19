@@ -4,78 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday Video Generator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        🎉 Birthday Video Generator 🎥
-    </header>
+    <h1>🎉 Birthday Video Generator 🎥</h1>
 
-    <!-- Main Container -->
-    <div class="container">
-        
-        <!-- Ad Placement (Left) -->
-        <div class="ad">Ad Space</div>
+    <form id="videoForm" enctype="multipart/form-data">
+        <label for="images">Upload Images:</label>
+        <input type="file" id="images" name="images" multiple accept="image/*"><br><br>
 
-        <!-- Content Section -->
-        <div class="content">
-            <h2>Upload Images, Music & Add Message</h2>
-            
-            <!-- Image Upload -->
-            <label for="imageUpload" class="upload-btn">📷 Upload Images</label>
-            <input type="file" id="imageUpload" accept="image/*" multiple hidden>
-            <div id="imagePreview"></div>
+        <label for="music">Upload Music:</label>
+        <input type="file" id="music" name="music" accept="audio/*"><br><br>
 
-            <!-- Music Upload -->
-            <label for="musicUpload" class="upload-btn">🎵 Upload Music</label>
-            <input type="file" id="musicUpload" accept="audio/*" hidden>
-            <div id="musicPreview"></div>
+        <label for="message">Custom Message:</label>
+        <input type="text" id="message" name="message" placeholder="Enter a birthday message..."><br><br>
 
-            <!-- Custom Message Input -->
-            <textarea id="customMessage" placeholder="Enter a birthday message..."></textarea>
+        <label for="format">Select Video Format:</label>
+        <select id="format" name="format">
+            <option value="landscape">Landscape</option>
+            <option value="portrait">Portrait</option>
+        </select><br><br>
 
-            <!-- Video Settings -->
-            <h3>Choose Video Format, Quality & Duration</h3>
-            <select id="videoFormat">
-                <option value="landscape">Landscape</option>
-                <option value="portrait">Portrait</option>
-            </select>
-            <select id="videoQuality">
-                <option value="1080p">1080p</option>
-                <option value="720p">720p</option>
-            </select>
-            <select id="videoDuration">
-                <option value="30">30 Seconds</option>
-                <option value="60">60 Seconds</option>
-            </select>
+        <label for="quality">Select Video Quality:</label>
+        <select id="quality" name="quality">
+            <option value="720p">720p</option>
+            <option value="1080p">1080p</option>
+        </select><br><br>
 
-            <!-- Create Video Button -->
-            <button id="createVideoBtn">🎥 Create Video</button>
+        <label for="duration">Select Duration:</label>
+        <select id="duration" name="duration">
+            <option value="30">30 seconds</option>
+            <option value="60">60 seconds</option>
+        </select><br><br>
 
-            <!-- Video Preview -->
-            <div id="videoPreview"></div>
+        <button type="submit">Create Video</button>
+    </form>
 
-            <!-- Download Button -->
-            <button id="downloadBtn" style="display: none;">📥 Download Video</button>
-        </div>
+    <h2>Video Preview:</h2>
+    <video id="videoPreview" controls></video>
 
-        <!-- Ad Placement (Right) -->
-        <div class="ad">Ad Space</div>
-
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 Birthday Video Generator | 
-        <a href="#">About Us</a> | 
-        <a href="#">Privacy Policy</a> | 
-        <a href="#">Terms of Service</a> | 
-        <a href="#">Disclaimer</a>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 </html>
