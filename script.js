@@ -5,8 +5,22 @@ document.getElementById("imageUpload").addEventListener("change", function(event
     Array.from(event.target.files).forEach(file => {
         let img = document.createElement("img");
         img.src = URL.createObjectURL(file);
+        img.classList.add("preview-img");
         preview.appendChild(img);
     });
+});
+
+// Music Upload Preview
+document.getElementById("musicUpload").addEventListener("change", function(event) {
+    let musicPreview = document.getElementById("musicPreview");
+    musicPreview.innerHTML = "";
+    let file = event.target.files[0];
+    if (file) {
+        let audio = document.createElement("audio");
+        audio.controls = true;
+        audio.src = URL.createObjectURL(file);
+        musicPreview.appendChild(audio);
+    }
 });
 
 // Create Video
@@ -29,6 +43,7 @@ document.getElementById("createVideoBtn").addEventListener("click", function() {
             </video>
             <p style="color: #0056b3;">${message} (Duration: ${duration}s)</p>
         `;
+
         document.getElementById("downloadBtn").style.display = "block";
     }, 3000);
 });
