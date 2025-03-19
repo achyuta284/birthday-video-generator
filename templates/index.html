@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Video Generator</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        🎉 Birthday Video Generator 🎥
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Ad Placement (Left) -->
+        <div class="ad">Ad Space</div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <h2>Upload Images, Music & Add Message</h2>
+            
+            <!-- Image Upload -->
+            <label for="imageUpload" class="upload-btn">📷 Upload Images</label>
+            <input type="file" id="imageUpload" accept="image/*" multiple hidden>
+            <div id="imagePreview"></div>
+
+            <!-- Music Upload -->
+            <label for="musicUpload" class="upload-btn">🎵 Upload Music</label>
+            <input type="file" id="musicUpload" accept="audio/*" hidden>
+
+            <!-- Custom Message Input -->
+            <textarea id="customMessage" placeholder="Enter a birthday message..."></textarea>
+
+            <!-- Video Settings -->
+            <h3>Choose Video Format, Quality & Duration</h3>
+            <select id="videoFormat">
+                <option value="landscape">Landscape</option>
+                <option value="portrait">Portrait</option>
+            </select>
+            <select id="videoQuality">
+                <option value="1080p">1080p</option>
+                <option value="720p">720p</option>
+            </select>
+            <select id="videoDuration">
+                <option value="30">30 Seconds</option>
+                <option value="60">60 Seconds</option>
+            </select>
+
+            <!-- Create Video Button -->
+            <button id="createVideoBtn">🎥 Create Video</button>
+
+            <!-- Video Preview -->
+            <div id="videoPreview"></div>
+
+            <!-- Download Button -->
+            <button id="downloadBtn" style="display: none;">📥 Download Video</button>
+        </div>
+
+        <!-- Ad Placement (Right) -->
+        <div class="ad">Ad Space</div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Birthday Video Generator | 
+        <a href="#">About Us</a> | 
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms of Service</a> | 
+        <a href="#">Disclaimer</a>
+    </footer>
+
+    <script src="static/script.js"></script>
+
+</body>
+</html>
