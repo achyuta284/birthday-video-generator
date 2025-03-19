@@ -47,3 +47,22 @@ document.getElementById("createVideoBtn").addEventListener("click", function() {
         document.getElementById("downloadBtn").style.display = "block";
     }, 3000);
 });
+
+document.getElementById("videoForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    
+    let formData = new FormData(this);
+    let response = await fetch("/generate-video", {
+        method: "POST",
+        body: formData
+    });
+
+    let result = await response.json();
+    
+    if (result.success) {
+        document.getElementById("videoPreview").src = result.video_url;
+    } else {
+        alert("Error generating video");
+    }
+});
+
