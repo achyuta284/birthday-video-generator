@@ -1,0 +1,142 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #0066cc, #0099ff);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+}
+
+/* Header */
+header {
+    background: #004080;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Ad Space */
+.ad {
+    width: 160px;
+    height: 600px;
+    background: #e6e6e6;
+    text-align: center;
+    line-height: 600px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Content Box */
+.content {
+    flex: 1;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+/* Buttons */
+.upload-btn, button {
+    background: #0056b3;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    font-size: 16px;
+    border: none;
+    width: 90%;
+}
+
+button:hover {
+    background: #003d80;
+}
+
+/* Image Preview */
+#imagePreview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+#imagePreview img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #007BFF;
+}
+
+/* Custom Message Box */
+#customMessage {
+    width: 90%;
+    height: 80px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 8px;
+    margin-top: 10px;
+    resize: none;
+}
+
+/* Select Dropdown */
+select {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 2px solid #007BFF;
+    background: white;
+}
+
+/* Video Preview */
+#videoPreview {
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    background: #00264d;
+    padding: 20px;
+    color: white;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #00ccff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ad {
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+    }
+}
